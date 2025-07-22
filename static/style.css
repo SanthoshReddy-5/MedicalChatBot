@@ -1,0 +1,169 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+}
+
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: black;
+  padding: 15px 20px;
+}
+
+.logo-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.logo-container h2{
+  font-size: 25px;
+  color: white;
+}
+
+.logo-container img{
+  width: 50px;
+  height: 50px;
+}
+
+nav a{
+  border: 2px solid #cfffe2;
+  background-color: #cfffe2;
+  padding: 8px 10px;
+  border-radius: 10px;
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+#chat-container {
+  flex: 1;
+  padding: 50px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  scroll-behavior: smooth;
+}
+
+.message {
+  margin: 10px;
+  max-width: 80%;
+  padding: 10px 25px;
+  border: 2px solid black;
+  border-radius: 10px;
+  font-size: 16px;
+  position: relative;
+  opacity: 0;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.message.user {
+  align-self: flex-end;
+  background-color: black;
+  color: white;
+}
+
+.message.bot {
+  align-self: flex-start;
+  background-color: black;
+  color: #cfffe2;
+}
+
+.message .meta {
+  font-size: 12px;
+  color: lightgrey;
+  margin-top: 10px;
+  text-align: right;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translateY(15px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+form {
+  display: flex;
+  gap: 20px;
+  padding: 15px 20px;
+  background-color: black;
+  border-top: 2px solid lightgray;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  color: #cfffe2;
+  background-color: black;
+  border: 2px solid #cfffe2;
+  border-radius: 10px;
+  outline: none;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: black;
+  color: #cfffe2;
+  border: 2px solid #cfffe2;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .logo-container h2{
+    font-size: 18px;
+  }
+
+  .logo-container img{
+    width: 40px;
+    height: 40px;
+  }
+
+  nav a{
+    padding: 5px 8px;
+  }
+
+  #chat-container {
+    padding: 25px;
+  }
+
+  button {
+    padding: 10px 15px;
+  }
+
+  input[type="text"] {
+    font-size: 14px;
+  }
+
+  button {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  .message {
+    max-width: 100%;
+    font-size: 14px;
+  }
+
+  .message .meta{
+    font-size: 10px;
+  }
+}

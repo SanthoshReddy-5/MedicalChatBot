@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <style type="text/css">
+    *{
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #cfffe2;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 30px;
+      animation: fadeInDown 1s ease forwards;
+    }
+
+    h2 {
+      font-size: 25px;
+      text-align: left;
+    }
+
+    p {
+      opacity: 0;
+      font-size: 18px;
+      animation: fadeIn 1s ease forwards;
+      animation-delay: 0.5s;
+    }
+
+    .section {
+      background-color: black;
+      color: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 1s ease forwards;
+      border: 2px solid black;
+    }
+
+    .section:nth-child(2) {
+      animation-delay: 0.6s;
+    }
+
+    .section:nth-child(3) {
+      animation-delay: 0.8s;
+    }
+
+    .section:nth-child(4) {
+      animation-delay: 1s;
+    }
+
+    .section:nth-child(4) h2{
+      text-align: center;
+    }
+
+    .section:nth-child(5) {
+      animation-delay: 1.2s;
+    }
+
+    .section:nth-child(5) h2{
+      text-align: center;
+    }
+
+    .developer-info {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .developer-info img {
+      margin-top: 20px;
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      flex-shrink: 0;
+      border: 2px solid black;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    ul {
+      padding-left: 20px;
+      font-size: 18px;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+      animation-delay: 0.6s;
+    }
+
+    li {
+      margin: 10px;
+    }
+
+    @keyframes fadeInDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
+
+      h1{
+        font-size: 20px;
+      }
+
+      h2{
+        font-size: 18px;
+      }
+
+      p{
+        font-size: 14px;
+      }
+
+      ul{
+        font-size: 14px;
+      }
+
+      .developer-info {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .developer-info img {
+        width: 150px;
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>About First Aid Bot</h1>
+
+    <div class="section">
+      <h2>What is First Aid Bot?</h2>
+      <p>First Aid Bot is an intelligent medical chatbot designed to help users with first aid advice and quick medical
+        information. Built as a Retrieval-Augmented Generation (RAG) application, it provides fast, accurate, and
+        trustworthy guidance during emergencies.</p>
+    </div>
+
+    <div class="section">
+      <h2>Tech Stack</h2>
+      <p>This bot integrates powerful technologies to deliver advanced medical support:</p>
+      <ul>
+        <li>Uses <strong>Google Gemini API</strong> for generative responses.</li>
+        <li>Employs <strong>Sentence Transformer Embedding Model</strong> for semantic search.</li>
+        <li>Stores vectors in <strong>Pinecone</strong> vector database for efficient retrieval.</li>
+        <li>Knowledge powered by <strong>The Gale Encyclopedia of Medicine</strong>.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Meet the Developer</h2>
+      <div class="developer-info">
+        <img src="{{ url_for('static', filename='developer.jpg') }}" alt="Developer Image">
+        <p>Hi, I am <strong>Santhosh Reddy</strong>, a passionate developer dedicated to merging technology with
+          healthcare to create innovative solutions. I love building intelligent systems that can truly make a
+          difference in people's lives.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Our Mission</h2>
+      <p>We believe that timely, accurate first aid information can save lives. The First Aid Bot aims to provide
+        accessible and reliable help anytime, anywhere, empowering everyone to act confidently in critical moments.</p>
+    </div>
+  </div>
+
+</body>
+
+</html>

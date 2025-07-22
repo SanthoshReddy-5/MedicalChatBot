@@ -1,0 +1,6 @@
+flask
+pinecone
+sentence-transformers
+langchain
+PyPDF2
+python-dotenv
