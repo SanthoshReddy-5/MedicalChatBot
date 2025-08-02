@@ -88,3 +88,8 @@ Once the index is created and your data is uploaded, you can start the flask web
 python app.py
 ```
 🚀 This will launch the Flask development server, Go to http://127.0.0.1:5000 in your browser.
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE.txt) file for more details.
+
+
